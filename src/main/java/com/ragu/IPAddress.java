@@ -1,26 +1,24 @@
+/**
+ * 
+ */
 package com.ragu;
 
 /**
- * Fancy Number
+ * @author jayarr4
  *
  */
-public class App {
+public class IPAddress {
 
 	/**
-	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
 
-		String ka53me = "215345";
+		String ipAddress = "10239135";
+		
+		int startNum = 1;
 
-		String ka53mf = "215348";
-
-		String inputString = ka53me;
-
-		int startNum = 6267;
-
-		int endNum = 9999;
+		int endNum = 235;
 
 		long input;
 
@@ -30,12 +28,12 @@ public class App {
 
 		for (int i = startNum; i <= endNum; i++) {
 
-			input = Long.parseLong(inputString + i);
+			input = Long.parseLong(ipAddress + i);
 			loop = 0;
 
 			do {
 
-				output = rec(input);
+				output = CommonUtil.rec(input);
 				if (loop == 0 && output == 41) { // Number 41 is fancy, so filtering only that number.
 					/*System.out.println(
 							"Loop:" + loop + " => " + inputString + " + " + i + " = " + input + ", Sum: " + output);*/
@@ -46,24 +44,7 @@ public class App {
 
 			} while (loop < 2);
 		}
+		
 	}
 
-	/**
-	 * 
-	 * @param input
-	 * @return
-	 */
-	private static long rec(long input) {
-
-		long m, n, sum;
-		sum = 0;
-		m = input;
-
-		while (m > 0) {
-			n = m % 10;
-			sum = sum + n;
-			m = m / 10;
-		}
-		return sum;
-	}
 }
